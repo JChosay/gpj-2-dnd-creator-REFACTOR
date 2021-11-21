@@ -1,0 +1,102 @@
+<div>
+    <form class="form-inline monster-search" id = "searchgroup">
+        <input class="form-control mr-sm-2" id='monster' type="search" placeholder="Search" aria-label="Search">
+        <p></p>
+        <button id="searchmonstersbtn" class="btn btn-outline-success my-2 my-lg-0" type="submit">Search</button>
+    </form>
+</div>
+<div id='search-results'>
+  
+    
+  <div id="monstertitleuser">
+    <h1 id='searchresultname'>{{name}}</h1>
+    <h2 id='type'>{{type}}, {{alignment}}</h2>
+  </div>
+
+  <div class="col-12" id="topcolumncontainer">
+
+    <div class="col-3" id="toprowleft">
+      <div>
+        <h4 class="statlabel">Armor Class</h4>
+        <p id='ac'>{{armor_class}}</p>
+      </div>
+      <div>
+        <h4 class="statlabel">Hit Points</h4>
+        <p id='hp'>{{hit_points}} ({{hit_dice}})</p>
+      </div>
+      <div>
+        <h4 class="statlabel">Speed</h4>
+        <p id='speed'>{{speed.walk}}</p>
+      </div>
+    </div>
+  
+    <div class="col-3" id="toprow2">
+      <h4 class="statlabel">Monster stats</h4>
+        <ul id='ms'>
+            <li class="labelz">Str: {{strength}}</li>
+            <li class="labelz">Cha: {{charisma}}</li>
+            <li class="labelz">Dex: {{dexterity}}</li>
+            <li class="labelz">Cons: {{constitution}}</li>
+            <li class="labelz">Int: {{intelligence}}</li>
+            <li class="labelz">Wis: {{wisdom}}</li>
+        </ul>
+    </div>
+
+    <div class="col-4" id="toprow3">
+      <div>
+        <h4 class="statlabel">Damage Immunities</h4>
+        <p id='d-imminities'>
+            {{damage_immunities}}
+        </p>
+      </div>
+      <div>
+        <h4 class="statlabel">Damage Resistances</h4>
+        <p id='d-resistances'>
+            {{damage_resistances}}
+        </p>
+      </div>
+      <div>
+        <h4 class="statlabel">Damage Vulnerabilities</h4>
+        <p id='d-vulnerabilities'>
+            {{damage_vulnerabilities}}
+        </p>
+      </div>
+      <div>
+        <h4 class="statlabel">Condition Immunities</h4>
+        <p id='c-imminities'>
+            {{condition_immunities}}
+        </p>
+      </div>
+    </div>
+      
+    <div class="col-3" id="toprowright"  
+      <div>
+        <h4 class="statlabel">Languages</h4>
+        <p id='Languages'>{{languages}}</p>
+        <h4 class="statlabel">Challenge</h4>
+        <p id='challenge'>{{challenge_rating}} ({{xp}} xp)</p>
+      </div>
+    </div>
+      
+
+    <h3 class="searchheaderlabelz"> Special Abilities </h3>
+    <div id='s-abilities'>
+        {{#each special_abilities as |abilities|}}
+        <h4>{{abilities.name}}</h4>
+        <p>{{abilities.desc}}</p>
+        {{/each}}
+    </div>
+
+    <h3 class="searchheaderlabelz">Actions</h3>
+
+    <div id='actions'>
+        {{#each actions as |action|}}
+        <h4>{{action.name}}</h4>
+        <p>{{action.desc}}</p>
+        {{/each}}
+      
+    </div>
+  </div>
+</div>
+
+  <script src='../js/monster.js'></script>

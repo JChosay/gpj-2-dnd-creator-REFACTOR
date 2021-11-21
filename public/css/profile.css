@@ -1,0 +1,21 @@
+#closecharbutton {
+    width: 100px;
+}
+
+#currcharlist {
+    font-family: 'MedievalSharp', cursive;
+    font-size: 8vh;
+    color: black;
+}
+
+#userName {
+    color: black;
+}
+
+#commentpagecontainer {
+    display: flex;
+}
+
+#commentbox {
+    width: 8vw;
+}
